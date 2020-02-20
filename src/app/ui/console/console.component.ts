@@ -21,6 +21,10 @@ export class ConsoleComponent implements OnInit, OnDestroy {
     this.console.messages
       .pipe(untilDestroyed(this))
       .subscribe(msg => this.log.push(msg));
+
+    this.console.clearEvent
+      .pipe(untilDestroyed(this))
+      .subscribe(() => this.log = []);
   }
 
   ngOnDestroy() {

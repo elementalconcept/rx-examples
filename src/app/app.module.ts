@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HotColdPageComponent } from './pages/hot-cold-page/hot-cold-page.component';
 import { HeaderComponent } from './ui/header/header.component';
 import { ConsoleComponent } from './ui/console/console.component';
+import { ImmutablePageComponent } from './pages/immutable-page/immutable-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HotColdPageComponent,
     HeaderComponent,
-    ConsoleComponent
+    ConsoleComponent,
+    ImmutablePageComponent
   ],
   imports: [
     BrowserModule,
