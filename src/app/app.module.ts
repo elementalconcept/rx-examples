@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HotColdPageComponent } from './pages/hot-cold-page/hot-cold-page.component';
 import { HeaderComponent } from './ui/header/header.component';
+import { ConsoleComponent } from './ui/console/console.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HotColdPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    ConsoleComponent
   ],
   imports: [
     BrowserModule,
