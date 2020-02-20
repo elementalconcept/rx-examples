@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+
+import { fromEvent } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 import { ConsoleService } from '../../ui/console/console.service';
 
@@ -8,11 +11,18 @@ import { ConsoleService } from '../../ui/console/console.service';
   styleUrls: [ './hot-cold-page.component.scss' ]
 })
 export class HotColdPageComponent implements OnInit {
-  constructor(private readonly console: ConsoleService) {
+  @ViewChild('subButton', { static: true }) subButton: ElementRef<HTMLButtonElement>;
+  @ViewChild('unsubButton', { static: true }) unsubButton: ElementRef<HTMLButtonElement>;
+
+  constructor(private readonly con: ConsoleService) {
   }
 
   ngOnInit() {
-  }
+    fromEvent(this.subButton.nativeElement, 'click')
+      .pipe(tap(() => this.con.log('Tap with subscribe')))
+      .subscribe(() => this.con.log('Subscriber callback'));
 
-  onClick = () => this.console.log('Button clicked');
+    fromEvent(this.unsubButton.nativeElement, 'click')
+      .pipe(tap(() => this.con.log('Tap without subscribe')));
+  }
 }
