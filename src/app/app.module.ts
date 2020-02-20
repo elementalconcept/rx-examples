@@ -7,6 +7,7 @@ import { HotColdPageComponent } from './pages/hot-cold-page/hot-cold-page.compon
 import { HeaderComponent } from './ui/header/header.component';
 import { ConsoleComponent } from './ui/console/console.component';
 import { ImmutablePageComponent } from './pages/immutable-page/immutable-page.component';
+import { OperatorPageComponent } from './pages/operator-page/operator-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ImmutablePageComponent } from './pages/immutable-page/immutable-page.co
     HotColdPageComponent,
     HeaderComponent,
     ConsoleComponent,
-    ImmutablePageComponent
+    ImmutablePageComponent,
+    OperatorPageComponent
   ],
   imports: [
     BrowserModule,
