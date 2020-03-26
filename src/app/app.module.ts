@@ -8,6 +8,9 @@ import { HeaderComponent } from './ui/header/header.component';
 import { ConsoleComponent } from './ui/console/console.component';
 import { ImmutablePageComponent } from './pages/immutable-page/immutable-page.component';
 import { OperatorPageComponent } from './pages/operator-page/operator-page.component';
+import { SubjectsPageComponent } from './pages/subjects-page/subjects-page.component';
+import { BehaviorSubjectPageComponent } from './pages/behavior-subject-page/behavior-subject-page.component';
+import { ReplaySubjectPageComponent } from './pages/replay-subject-page/replay-subject-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { OperatorPageComponent } from './pages/operator-page/operator-page.compo
     HeaderComponent,
     ConsoleComponent,
     ImmutablePageComponent,
-    OperatorPageComponent
+    OperatorPageComponent,
+    SubjectsPageComponent,
+    BehaviorSubjectPageComponent,
+    ReplaySubjectPageComponent
   ],
   imports: [
     BrowserModule,
