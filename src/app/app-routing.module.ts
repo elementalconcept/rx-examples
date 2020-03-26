@@ -7,6 +7,7 @@ import { OperatorPageComponent } from './pages/operator-page/operator-page.compo
 import { SubjectsPageComponent } from './pages/subjects-page/subjects-page.component';
 import { BehaviorSubjectPageComponent } from './pages/behavior-subject-page/behavior-subject-page.component';
 import { ReplaySubjectPageComponent } from './pages/replay-subject-page/replay-subject-page.component';
+import { MemoryLeakPageComponent } from './pages/memory-leak-page/memory-leak-page.component';
 
 const routes: Routes = [
   { path: 'hot-cold', component: HotColdPageComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'operator', component: OperatorPageComponent },
   { path: 'subjects', component: SubjectsPageComponent },
   { path: 'behavior-subject', component: BehaviorSubjectPageComponent },
-  { path: 'replay-subject', component: ReplaySubjectPageComponent }
+  { path: 'replay-subject', component: ReplaySubjectPageComponent },
+  { path: 'memory-leak', component: MemoryLeakPageComponent }
 ];
 
 @NgModule({

@@ -11,6 +11,7 @@ import { OperatorPageComponent } from './pages/operator-page/operator-page.compo
 import { SubjectsPageComponent } from './pages/subjects-page/subjects-page.component';
 import { BehaviorSubjectPageComponent } from './pages/behavior-subject-page/behavior-subject-page.component';
 import { ReplaySubjectPageComponent } from './pages/replay-subject-page/replay-subject-page.component';
+import { MemoryLeakPageComponent } from './pages/memory-leak-page/memory-leak-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReplaySubjectPageComponent } from './pages/replay-subject-page/replay-s
     OperatorPageComponent,
     SubjectsPageComponent,
     BehaviorSubjectPageComponent,
-    ReplaySubjectPageComponent
+    ReplaySubjectPageComponent,
+    MemoryLeakPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,16 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { untilDestroyed } from 'ngx-take-until-destroy';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 import { ConsoleService } from './console.service';
 
+@UntilDestroy()
 @Component({
   selector: 'app-console',
   templateUrl: './console.component.html',
   styleUrls: [ './console.component.scss' ]
 })
-export class ConsoleComponent implements OnInit, OnDestroy {
+export class ConsoleComponent implements OnInit {
   log: any[];
 
   constructor(private readonly console: ConsoleService) {
@@ -25,8 +26,5 @@ export class ConsoleComponent implements OnInit, OnDestroy {
     this.console.clearEvent
       .pipe(untilDestroyed(this))
       .subscribe(() => this.log = []);
-  }
-
-  ngOnDestroy() {
   }
 }

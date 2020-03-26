@@ -1,16 +1,18 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { ConsoleService } from '../../ui/console/console.service';
 import { Observable, Subject } from 'rxjs';
 import { map, pluck } from 'rxjs/operators';
-import { untilDestroyed } from 'ngx-take-until-destroy';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
+import { ConsoleService } from '../../ui/console/console.service';
+
+@UntilDestroy()
 @Component({
   selector: 'app-operator-page',
   templateUrl: './operator-page.component.html',
   styleUrls: [ './operator-page.component.scss' ]
 })
-export class OperatorPageComponent implements OnInit, OnDestroy {
+export class OperatorPageComponent implements OnInit {
   private readonly data$ = new Subject<RandomData>();
 
   constructor(private readonly con: ConsoleService) {
@@ -29,10 +31,7 @@ export class OperatorPageComponent implements OnInit, OnDestroy {
       .pipe(
         untilDestroyed(this),
         getNumber('numberAsString'))
-      .subscribe(num => this.con.log(`Got number ${num}`));
-  }
-
-  ngOnDestroy() {
+      .subscribe(num => this.con.log(`Got number ${ num }`));
   }
 
   onClick = () => this.data$.next({ numberAsString: Math.round(Math.random() * 100).toString() });

@@ -1,16 +1,17 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { BehaviorSubject } from 'rxjs';
-import { untilDestroyed } from 'ngx-take-until-destroy';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 import { ConsoleService } from '../../ui/console/console.service';
 
+@UntilDestroy()
 @Component({
   selector: 'app-behavior-subject-page',
   templateUrl: './behavior-subject-page.component.html',
   styleUrls: [ './behavior-subject-page.component.scss' ]
 })
-export class BehaviorSubjectPageComponent implements OnInit, OnDestroy {
+export class BehaviorSubjectPageComponent implements OnInit {
   private accumulator = 0;
   private subject = new BehaviorSubject<number>(-1);
 
@@ -18,9 +19,6 @@ export class BehaviorSubjectPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-  }
-
-  ngOnDestroy() {
   }
 
   emitEvent = () => this.subject.next(++this.accumulator);
