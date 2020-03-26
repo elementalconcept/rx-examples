@@ -12,6 +12,7 @@ import { SubjectsPageComponent } from './pages/subjects-page/subjects-page.compo
 import { BehaviorSubjectPageComponent } from './pages/behavior-subject-page/behavior-subject-page.component';
 import { ReplaySubjectPageComponent } from './pages/replay-subject-page/replay-subject-page.component';
 import { MemoryLeakPageComponent } from './pages/memory-leak-page/memory-leak-page.component';
+import { ExecutionOrderComponent } from './pages/execution-order/execution-order.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MemoryLeakPageComponent } from './pages/memory-leak-page/memory-leak-pa
     SubjectsPageComponent,
     BehaviorSubjectPageComponent,
     ReplaySubjectPageComponent,
-    MemoryLeakPageComponent
+    MemoryLeakPageComponent,
+    ExecutionOrderComponent
   ],
   imports: [
     BrowserModule,
